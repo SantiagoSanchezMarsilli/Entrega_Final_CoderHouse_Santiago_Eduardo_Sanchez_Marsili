@@ -167,11 +167,13 @@ CREATE TABLE auditoria_ventas (
 --- auditoria_cuotas
 
 CREATE TABLE auditoria_cuotas (
-    ID_Auditoria INT NOT NULL AUTO_INCREMENT,
-    ID_Cuota INT NOT NULL,
-    ID_Venta INT NOT NULL,
-    Monto_Cuota DECIMAL(10,2) NOT NULL,
-    Fecha_Primer_Vencimiento DATE NOT NULL,
-    Fecha_Registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    PRIMARY KEY (ID_Auditoria)
+  ID_Auditoria INT NOT NULL AUTO_INCREMENT,
+  ID_Cuota INT NOT NULL,
+  ID_Venta INT NOT NULL,
+  Monto_Cuota DECIMAL(10,2) NOT NULL,
+  Fecha_Primer_Vencimiento DATE NOT NULL,
+  Fecha_Registro TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (ID_Auditoria),
+  FOREIGN KEY (ID_Cuota) REFERENCES cuotas_pago(ID_Cuota),
+  FOREIGN KEY (ID_Venta) REFERENCES ventas(ID_Ventas)
 );
