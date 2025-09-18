@@ -392,6 +392,30 @@ Brindar una visualización clara y completa de las ventas realizadas, permitiend
 
 ---
 
+### Vista resumen_ventas_por_vendedor
+
+**Descripción**
+Esta vista permite visualizar de forma consolidada el desempeño comercial de cada empleado que participa en el proceso de ventas. A través de una lectura sintética, se agrupan todas las operaciones realizadas por cada vendedor, mostrando tanto la cantidad de transacciones como el monto total generado.
+
+Incluye información sobre el legajo del vendedor, su nombre completo, el número de ventas realizadas y el total acumulado de ingresos asociados a dichas operaciones.
+
+Su diseño refleja una lectura agregada del ciclo de ventas, útil para auditorías internas, análisis de productividad y evaluación de desempeño comercial. Cada fila representa un resumen individual de actividad, una unidad de impacto dentro del sistema de ventas.
+
+**Objetivo**
+Brindar una visualización clara y resumida del rendimiento de cada vendedor, permitiendo identificar:
+
+- Cuántas ventas realizó cada empleado
+- Cuál fue el monto total generado por sus operaciones
+- Qué legajo y nombre completo tiene cada vendedor
+
+**Tablas que componen la vista**
+
+- **ventas**: contiene el identificador de la venta, el monto total y el vínculo con el empleado responsable.
+- **empleados**: aporta el legajo y el nombre completo del vendedor que realizó la operación.
+
+---
+
+
 ## Lista de Stored Procedures
 
 ---
