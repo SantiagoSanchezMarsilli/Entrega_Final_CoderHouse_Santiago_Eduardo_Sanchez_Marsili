@@ -95,6 +95,19 @@ JOIN productos p ON vp.ID_Producto = p.ID_Producto
 JOIN medios_de_pago mp ON v.Medio_de_pago = mp.ID_Medio
 JOIN clientes c ON v.ID_Cliente = c.ID_Cliente;
 
+--- resumen_ventas_por_vendedor
+
+CREATE VIEW resumen_ventas_por_vendedor AS
+SELECT 
+  e.Legajo AS ID_Vendedor,
+  e.Nombre_completo,
+  COUNT(v.ID_Ventas) AS Cantidad_Ventas,
+  SUM(v.Total) AS Monto_Total_Vendido
+FROM ventas v
+JOIN empleados e ON v.Vendedor = e.Legajo
+GROUP BY e.Legajo, e.Nombre_completo;
+
+
 
 --- Llamando a las Vistas
 
@@ -115,3 +128,6 @@ SELECT * FROM vista_productos_agrupados; -- Agrupación por nombre de producto, 
 
 -- Ver detalle de ventas con cliente, producto y medio de pago
 SELECT * FROM vista_ventas_detalladas;  -- Cada línea representa un producto vendido, con cantidad, precio, medio de pago y cliente. Trazabilidad comercial por ítem y comprador.
+
+-- Ver consolidado de ventas por vendedor
+SELECT * FROM resumen_ventas_por_vendedor; -- Una fila por vendedor, mostrando cantidad de ventas y monto total acumulado. Lectura sintética de desempeño comercial.
