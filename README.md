@@ -707,10 +707,10 @@ Este trigger es especialmente útil en sistemas que gestionan pagos escalonados,
 
 ---
 
-    ### Rol Ventas
+###   Rol Ventas
 
-    - **Tipo**: Rol sin login, enfocado en operaciones comerciales.
-    - **Usuario asignado**: `ventas_user`
+   - **Tipo**: Rol sin login, enfocado en operaciones comerciales.
+   - **Usuario asignado**: `ventas_user`
     - **Permisos**:
     - Inserción en tablas de ventas (`ventas`, `detalle_ventas`, `clientes`)
     - Lectura de clientes (para validar antes de vender)
