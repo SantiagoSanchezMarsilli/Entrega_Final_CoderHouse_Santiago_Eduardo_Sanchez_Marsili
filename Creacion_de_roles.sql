@@ -1,104 +1,109 @@
 -- Selección de la base de datos para trabajar
 USE Cuchuflito_SA;
 
--- Creacion de roles
+-- Creación de usuarios según roles institucionales (sin clave)
 
--- Crear el rol Gerente (rol sin login, usado para agrupar permisos)
-CREATE ROLE Gerente;
+-- Usuario: Socio Gerente
+DROP USER IF EXISTS 'socio_gerente_user'@'localhost';
+CREATE USER 'socio_gerente_user'@'localhost';
 
--- Crear el usuario gerente_user con login (sin contraseña explícita)
-CREATE ROLE gerente_user WITH LOGIN;
+-- Acceso total sobre todas las tablas (crear, modificar, eliminar, consultar, insertar, actualizar)
+GRANT ALL PRIVILEGES ON cuchuflito_sa.* TO 'socio_gerente_user'@'localhost';
 
--- Asignar el rol Gerente al usuario
-GRANT Gerente TO gerente_user;
+-- Permisos para crear y modificar estructuras
+GRANT CREATE, ALTER, DROP ON cuchuflito_sa.* TO 'socio_gerente_user'@'localhost';
 
--- Conceder acceso total a todas las tablas del esquema público
-GRANT SELECT, INSERT, UPDATE, DELETE ON ALL TABLES IN SCHEMA public TO Gerente;
+-- Permisos para consultar todas las vistas
+GRANT SELECT ON cuchuflito_sa.vista_compras_detalladas TO 'socio_gerente_user'@'localhost';
+GRANT SELECT ON cuchuflito_sa.vista_compras_facturadas TO 'socio_gerente_user'@'localhost';
+GRANT SELECT ON cuchuflito_sa.vista_control_inventario TO 'socio_gerente_user'@'localhost';
 
--- Conceder ejecución de todas las vistas (en PostgreSQL, las vistas son tablas virtuales)
-GRANT SELECT ON ALL TABLES IN SCHEMA public TO Gerente;
+-- Permisos para ejecutar todas las funciones
+GRANT EXECUTE ON FUNCTION calcular_total_venta TO 'socio_gerente_user'@'localhost';
+GRANT EXECUTE ON FUNCTION calcular_total_compra TO 'socio_gerente_user'@'localhost';
+GRANT EXECUTE ON FUNCTION stock_actual_producto TO 'socio_gerente_user'@'localhost';
+GRANT EXECUTE ON FUNCTION total_facturado_cliente TO 'socio_gerente_user'@'localhost';
 
--- Conceder ejecución de funciones y procedimientos
-GRANT EXECUTE ON ALL FUNCTIONS IN SCHEMA public TO Gerente;
+-- Permisos para ejecutar todos los procedimientos
+GRANT EXECUTE ON PROCEDURE registrar_venta TO 'socio_gerente_user'@'localhost';
+GRANT EXECUTE ON PROCEDURE registrar_venta_update TO 'socio_gerente_user'@'localhost';
+GRANT EXECUTE ON PROCEDURE registrar_compra TO 'socio_gerente_user'@'localhost';
+GRANT EXECUTE ON PROCEDURE actualizar_stock TO 'socio_gerente_user'@'localhost';
+GRANT EXECUTE ON PROCEDURE registrar_cuota TO 'socio_gerente_user'@'localhost';
+GRANT EXECUTE ON PROCEDURE ObtenerResumenComprasPorEmpleado TO 'socio_gerente_user'@'localhost';
+GRANT EXECUTE ON PROCEDURE ObtenerResumenVentasPorEmpleado TO 'socio_gerente_user'@'localhost';
 
+-- Usuario: Vendedor
+DROP USER IF EXISTS 'vendedor_user'@'localhost';
+CREATE USER 'vendedor_user'@'localhost';
 
--- Creación de rol de Ventas
+-- Permisos de inserción en tablas de ventas
+GRANT INSERT ON cuchuflito_sa.ventas TO 'vendedor_user'@'localhost';
+GRANT INSERT ON cuchuflito_sa.ventas_productos TO 'vendedor_user'@'localhost';
 
--- Crear el rol Ventas (sin login, solo para permisos)
-CREATE ROLE Ventas;
+-- Permisos de consulta en tabla de clientes (solo si necesita validar antes de vender)
+GRANT SELECT ON cuchuflito_sa.clientes TO 'vendedor_user'@'localhost';
 
--- Crear el usuario con login sin contraseña explícita
-CREATE ROLE ventas_user WITH LOGIN;
+-- Permisos de consulta en vistas relacionadas con ventas
+GRANT SELECT ON cuchuflito_sa.vista_ventas_detalladas TO 'vendedor_user'@'localhost';
+GRANT SELECT ON cuchuflito_sa.vista_productos_agrupados TO 'vendedor_user'@'localhost';
 
--- Asignar el rol Ventas al usuario
-GRANT Ventas TO ventas_user;
+-- Permisos de ejecución en funciones relacionadas con ventas
+GRANT EXECUTE ON FUNCTION calcular_total_venta TO 'vendedor_user'@'localhost';
 
--- Conceder permisos de INSERT en tablas relacionadas con ventas
-GRANT INSERT ON ventas, detalle_ventas, clientes TO Ventas;
+-- Permisos de ejecución en procedimientos relacionados con ventas
+GRANT EXECUTE ON PROCEDURE registrar_venta TO 'vendedor_user'@'localhost';
+GRANT EXECUTE ON PROCEDURE registrar_venta_update TO 'vendedor_user'@'localhost';
+GRANT EXECUTE ON PROCEDURE ObtenerResumenVentasPorEmpleado TO 'vendedor_user'@'localhost';
 
--- Conceder permisos de SELECT solo si se necesita consultar antes de insertar
-GRANT SELECT ON clientes TO Ventas;
+-- Usuario: Compras y Depósito
+DROP USER IF EXISTS 'compras_deposito_user'@'localhost';
+CREATE USER 'compras_deposito_user'@'localhost';
 
--- Conceder ejecución de vistas relacionadas
-GRANT SELECT ON vista_ventas_diarias, vista_clientes_activos TO Ventas;
+-- Permisos de inserción en tablas operativas
+GRANT INSERT ON cuchuflito_sa.compras TO 'compras_deposito_user'@'localhost';
+GRANT INSERT ON cuchuflito_sa.compras_productos TO 'compras_deposito_user'@'localhost';
 
--- Conceder ejecución de funciones relacionadas
-GRANT EXECUTE ON FUNCTION registrar_venta() TO Ventas;
-GRANT EXECUTE ON FUNCTION calcular_total_venta() TO Ventas;
+-- Permisos de inserción y consulta en proveedores
+GRANT INSERT ON cuchuflito_sa.proveedores TO 'compras_deposito_user'@'localhost';
+GRANT SELECT ON cuchuflito_sa.proveedores TO 'compras_deposito_user'@'localhost';
 
--- Conceder ejecución de procedimientos relacionados
-GRANT EXECUTE ON PROCEDURE procesar_venta TO Ventas;
-GRANT EXECUTE ON PROCEDURE registrar_venta_update TO Ventas;
+-- Permisos de consulta en vistas relacionadas con compras y stock
+GRANT SELECT ON cuchuflito_sa.vista_compras_detalladas TO 'compras_deposito_user'@'localhost';
+GRANT SELECT ON cuchuflito_sa.vista_compras_facturadas TO 'compras_deposito_user'@'localhost';
+GRANT SELECT ON cuchuflito_sa.vista_control_inventario TO 'compras_deposito_user'@'localhost';
 
+-- Permisos de ejecución en funciones de compras
+GRANT EXECUTE ON FUNCTION calcular_total_compra TO 'compras_deposito_user'@'localhost';
 
+-- Permisos de ejecución en procedimientos de compras y depósito
+GRANT EXECUTE ON PROCEDURE registrar_compra TO 'compras_deposito_user'@'localhost';
+GRANT EXECUTE ON PROCEDURE actualizar_stock TO 'compras_deposito_user'@'localhost';
 
--- Creacion de rol de compras 
+-- Usuario: Capital Humano
+DROP USER IF EXISTS 'capital_humano_user'@'localhost';
+CREATE USER 'capital_humano_user'@'localhost';
 
--- Crear el rol Compras (sin login, solo para permisos)
-CREATE ROLE Compras;
+-- Permisos de lectura y edición sobre todas las tablas (sin INSERT ni DELETE)
+GRANT SELECT, UPDATE ON cuchuflito_sa.empleados TO 'capital_humano_user'@'localhost';
+GRANT SELECT, UPDATE ON cuchuflito_sa.medios_de_pago TO 'capital_humano_user'@'localhost';
+GRANT SELECT, UPDATE ON cuchuflito_sa.roles TO 'capital_humano_user'@'localhost';
+GRANT SELECT, UPDATE ON cuchuflito_sa.cuotas_pago TO 'capital_humano_user'@'localhost';
+GRANT SELECT, UPDATE ON cuchuflito_sa.ventas TO 'capital_humano_user'@'localhost';
+GRANT SELECT, UPDATE ON cuchuflito_sa.ventas_productos TO 'capital_humano_user'@'localhost';
+GRANT SELECT, UPDATE ON cuchuflito_sa.compras TO 'capital_humano_user'@'localhost';
+GRANT SELECT, UPDATE ON cuchuflito_sa.productos TO 'capital_humano_user'@'localhost';
+GRANT SELECT, UPDATE ON cuchuflito_sa.compras_productos TO 'capital_humano_user'@'localhost';
+GRANT SELECT, UPDATE ON cuchuflito_sa.proveedores TO 'capital_humano_user'@'localhost';
+GRANT SELECT, UPDATE ON cuchuflito_sa.clientes TO 'capital_humano_user'@'localhost';
 
--- Crear el usuario con login sin contraseña explícita
-CREATE ROLE compras_user WITH LOGIN;
+-- Acceso de solo lectura a todas las vistas
+GRANT SELECT ON cuchuflito_sa.resumen_ventas_por_vendedor TO 'capital_humano_user'@'localhost';
+GRANT SELECT ON cuchuflito_sa.vista_inventario_por_proveedor TO 'capital_humano_user'@'localhost';
+GRANT SELECT ON cuchuflito_sa.vista_productos_agrupados TO 'capital_humano_user'@'localhost';
+GRANT SELECT ON cuchuflito_sa.vista_compras_detalladas TO 'capital_humano_user'@'localhost';
+GRANT SELECT ON cuchuflito_sa.vista_compras_facturadas TO 'capital_humano_user'@'localhost';
+GRANT SELECT ON cuchuflito_sa.vista_control_inventario TO 'capital_humano_user'@'localhost';
+GRANT SELECT ON cuchuflito_sa.vista_ventas_detalladas TO 'capital_humano_user'@'localhost';
 
--- Asignar el rol Compras al usuario
-GRANT Compras TO compras_user;
-
--- Conceder permisos de INSERT en tablas relacionadas con compras
-GRANT INSERT ON compras, detalle_compras, proveedores TO Compras;
-
--- Conceder permisos de SELECT si necesita consultar antes de insertar
-GRANT SELECT ON proveedores TO Compras;
-
--- Conceder ejecución de vistas relacionadas
-GRANT SELECT ON vista_compras_mensuales, vista_proveedores_activos TO Compras;
-
--- Conceder ejecución de funciones relacionadas
-GRANT EXECUTE ON FUNCTION registrar_compra() TO Compras;
-GRANT EXECUTE ON FUNCTION calcular_total_compra() TO Compras;
-
--- Conceder ejecución de procedimientos relacionados (si existen)
-GRANT EXECUTE ON PROCEDURE procesar_compra TO Compras;
-
-
--- Creacion de Rol de RRHH
-
--- Crear el rol RRHH (sin login, solo para permisos)
-CREATE ROLE RRHH;
-
--- Crear el usuario con login sin contraseña explícita
-CREATE ROLE rrhh_user WITH LOGIN;
-
--- Asignar el rol RRHH al usuario
-GRANT RRHH TO rrhh_user;
-
--- Conceder permisos de lectura en todas las tablas del esquema público
-GRANT SELECT ON ALL TABLES IN SCHEMA public TO RRHH;
-
--- Conceder permisos de lectura en todas las vistas (incluidas como tablas virtuales)
-GRANT SELECT ON ALL TABLES IN SCHEMA public TO RRHH;
-
--- Conceder permisos de modificación (UPDATE) en todas las tablas
-GRANT UPDATE ON ALL TABLES IN SCHEMA public TO RRHH;
-
--- No se conceden permisos de INSERT, DELETE ni EXECUTE
--- Esto garantiza que no pueda crear registros ni ejecutar funciones o procedimientos
+-- No se conceden permisos de INSERT, DELETE, EXECUTE, CREATE, DROP ni ALTER
