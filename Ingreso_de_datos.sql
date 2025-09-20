@@ -1,8 +1,11 @@
+-- Archivo ilustrativo, no esta en orden de carga, para ello usar scrip de cracion integro
+
+
 -- Selección de la base de datos para trabajar
 USE Cuchuflito_SA;
 
 -- Inserción de registros en la tabla `clientes`
-INSERT INTO `clientes` (`id`, `nombre`, `apellido`, `direccion`, `telefono`, `email`, `dni`)
+INSERT INTO `clientes` 
 VALUES
   (1, 'Comprador', 'Eventual', 'S/D', 'S/D', 'S/D', 'S/D'),
   (2, 'Mariana', 'Alvarez', 'Paraguay 123', '1151112222', 'Mar@hotmail.com', '25000002'),
@@ -19,8 +22,7 @@ VALUES
 
 
 -- Inserción de registros en la tabla `compras`
--- Estructura asumida: (id_compra, id_cliente, fecha, monto, cantidad_productos)
-INSERT INTO `compras` (`id_compra`, `id_cliente`, `fecha`, `monto`, `cantidad_productos`)
+INSERT INTO `compras` 
 VALUES
   (2, 1, '2025-08-01', 1378750, 2),
   (3, 2, '2025-08-01', 256000, 2),
@@ -39,8 +41,8 @@ VALUES
 
 
 -- Inserción de registros en la tabla `compras_productos`
--- Estructura asumida: (id_compra, id_producto, cantidad, precio_unitario)
-INSERT INTO `compras_productos` VALUES
+INSERT INTO `compras_productos` 
+  VALUES
 (2,1,200,1599),(2,2,300,999),(2,3,200,799),(2,4,250,599),(2,5,150,1999),(2,6,150,999),
 (3,22,80,750),(3,23,80,550),(3,24,80,750),(3,25,80,600),(3,26,80,550),
 (2,1,200,1599),(2,2,300,999),(2,3,200,799),(2,4,250,599),(2,5,150,1999),(2,6,150,999),
@@ -79,8 +81,8 @@ INSERT INTO `compras_productos` VALUES
 
 
 -- Inserción de registros en la tabla `cuotas_pago`
--- Estructura asumida: (id_cuota, id_compra, nro_cuota)
-INSERT INTO `cuotas_pago` VALUES
+INSERT INTO `cuotas_pago` 
+  VALUES
   (1,5,1),
   (2,5,3),
   (3,5,6),
@@ -91,8 +93,8 @@ INSERT INTO `cuotas_pago` VALUES
 
 
 -- Inserción de registros en la tabla `empleados`
--- Estructura asumida: (id_empleado, nombre, dni, telefono, email, puesto, id_sucursal)
-INSERT INTO `empleados` VALUES
+INSERT INTO `empleados` 
+  VALUES
   (2, 'Lammen Rosgoniel', '27255554239', '1151774780', 'LammenRos@Chuchuflito.com', 'Socio Gerente', 2),
   (3, 'Vendedor 1', '27333333339', '2215745852', 'vendedor1@Cuchuflito.com', 'Vendedor', 3),
   (4, 'Vendedor 2', '24135555469', '1154794545', 'vendedor2@Cuchuflito.com', 'Vendedor', 3),
@@ -102,8 +104,8 @@ INSERT INTO `empleados` VALUES
 
 
 -- Inserción de registros en la tabla `medios_de_pago`
--- Estructura asumida: (id_medio, nombre, tipo, permite_cuotas)
-INSERT INTO `medios_de_pago` VALUES
+INSERT INTO `medios_de_pago` 
+  VALUES
   (1, 'Efectivo', 'Contado', 0),
   (2, 'Tarjeta Debito', 'Contado', 0),
   (3, 'Visa', NULL, 0),
@@ -113,7 +115,8 @@ INSERT INTO `medios_de_pago` VALUES
 
 
 
-INSERT INTO productos (ID_Producto, Nombre, Descripcion, Precio, ID_Proveedor, Stock) VALUES
+INSERT INTO productos  
+  VALUES
 (1, 'RTX 4090', 'GPU insignia, Ada Lovelace, 24GB GDDR6X, 16384 núcleos CUDA, ideal para 4K, IA y edición profesional.', 1599, 1, 200),
 (2, 'RTX 4080 SUPER', 'GPU de alto rendimiento, Ada Lovelace, 16GB GDDR6X, 10240 núcleos CUDA, excelente para gaming 4K y productividad', 999, 1, 300),
 (3, 'RTX 4070 Ti SUPER', 'GPU para 1440p exigente, Ada Lovelace, 16GB GDDR6X, 8448 núcleos CUDA, buena relación rendimiento/precio.', 799, 1, 200),
@@ -189,8 +192,8 @@ INSERT INTO productos (ID_Producto, Nombre, Descripcion, Precio, ID_Proveedor, S
 
 
 -- Inserción de registros en la tabla `proveedores`
--- Estructura asumida: (id_proveedor, nombre, direccion, telefono, email)
-INSERT INTO `proveedores` VALUES
+INSERT INTO `proveedores` 
+  VALUES
   (1, 'NVIDIA', 'Gorostiaga 6532', '1156981482', 'ventas@nvidia.com'),
   (2, 'EVGA', 'Bolivar 4563', '1135698347', 'ventas@evga.com'),
   (3, 'Zontac', 'Lima 1234', '1156985273', 'ventas@zontac.com'),
@@ -209,8 +212,8 @@ INSERT INTO `proveedores` VALUES
 
 
 -- Inserción de registros en la tabla `roles`
--- Estructura asumida: (id_rol, nombre, descripcion)
-INSERT INTO `roles` VALUES
+INSERT INTO `roles` 
+  VALUES
   (2, 'Socio Gerente', 'Socio con facultades ejecutivas que representa legal y operativamente a la empresa.'),
   (3, 'Vendedor', 'Responsable de ofrecer productos, cerrar ventas y cultivar relaciones comerciales.'),
   (4, 'Compras y Deposito', 'Gestiona la adquisición, recepción y almacenamiento de productos, asegurando abastecimiento eficiente, control de inventario y trazabilidad operativa.'),
@@ -219,8 +222,8 @@ INSERT INTO `roles` VALUES
 
 
 -- Inserción de registros en la tabla `ventas`
--- Estructura asumida: (id_venta, id_cliente, fecha, monto_total, id_medio_pago, id_empleado)
-INSERT INTO `ventas` VALUES
+INSERT INTO `ventas` 
+  VALUES
   (1, 1, '2025-08-03', 2999, 6, 3),
   (2, 1, '2025-08-03', 1599, 3, 3),
   (3, 3, '2025-08-03', 699, 5, 4),
@@ -240,8 +243,8 @@ INSERT INTO `ventas` VALUES
 
 
 -- Inserción de registros en la tabla `ventas_productos`
--- Estructura asumida: (id_venta, id_producto, cantidad, precio_unitario)
-INSERT INTO `ventas_productos` VALUES
+INSERT INTO `ventas_productos` 
+  VALUES
   (1, 71, 1, 2999),
   (2, 1, 1, 1599),
   (3, 13, 1, 699),
@@ -266,3 +269,4 @@ INSERT INTO `ventas_productos` VALUES
   (15, 58, 1, 153),
   (15, 62, 1, 95),
   (16, 7, 1, 999);
+
