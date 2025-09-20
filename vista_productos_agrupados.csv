@@ -1,0 +1,54 @@
+Nombre,stock_total,descripciones,costos
+"ADATA XPG MARS 980 Blade Gen5 4TB",600,"PCIe Gen5 x4, lectura hasta 14.000MB/s, escritura hasta 13.000MB/s. Rendimiento extremo para entornos exigentes.",542
+"ASUS Prime B760M-K D4",700,"Micro-ATX, LGA1700, DDR4, USB 3.2 Gen 1, buena opción para Intel 12ª y 13ª Gen. Estable y compacta.",109
+"ASUS ROG Crosshair X870E Hero",500,"ATX, socket AM5, DDR5, PCIe 5.0, Wi-Fi 7, ideal para Ryzen 9000 y setups de alto rendimiento",663
+"ASUS ROG Maximus Z890 Hero",600,"ATX, socket LGA1851, DDR5 hasta 9200 MHz, 6x M.2, Wi-Fi 7, Thunderbolt 4, ideal para overclocking y gaming extremo.",659
+"Core i9-14900KS",400,"Último modelo de Raptor Lake S, con 6.0 GHz de turbo. Excelente para overclocking y tareas exigentes, aunque sin NPU integrada.",699
+"Core Ultra 5 235A",300,"14 núcleos (6P + 8E), ideal para gaming en 1080p/1440p y productividad diaria. Arquitectura Arrow Lake con eficiencia energética y soporte IA.",299
+"Core Ultra 5 235TA",300,"Variante optimizada para portátiles, con buen rendimiento multihilo y gráficos integrados. Perfecto para usuarios que buscan equilibrio.",279
+"Core Ultra 5 235UA",300,"Chip compacto con núcleos de bajo consumo (LP-E), pensado para laptops livianas y tareas cotidianas con IA integrada.",259
+"Core Ultra 9 285HX",400,"Procesador de alto rendimiento para portátiles gaming y estaciones móviles. 24 núcleos (8P + 16E), hasta 5.5 GHz, con NPU para IA y gráficos integrados Intel Arc. Ideal para multitarea extrema y creación de contenido.",749
+"Core Ultra 9 285K",400,"Versión de escritorio desbloqueada, con 24 núcleos y arquitectura Arrow Lake S. Potente para gaming 4K, edición de video y simulaciones complejas.",720
+"Corsair Vengeance DDR5 6000MHz RGB",650,"Kit 2x16GB DDR5, frecuencia 6000MHz, CL36, RGB, compatible con Intel y AMD EXPO. Ideal para setups de alto rendimiento.",185
+"Corsair Vengeance RGB Pro DDR4 3600MHz",700,"Módulo UDIMM DDR4, 16GB, frecuencia 3600MHz, RGB, ideal para setups gamer con estética personalizada.",108
+"GIGABYTE B550M K",700,"Micro-ATX, socket AM4, PCIe 4.0, Dual M.2, excelente calidad-precio para Ryzen 5000.",89
+"Gigabyte Z890 AORUS Master",600,"ATX, LGA1851, DDR5 hasta 9500 MHz, 5x M.2, red 10 GbE, AI Snatch para optimización automática. Potente y elegante.",599
+"Hiksemi Armor DDR4 3200MHz",800,"Módulo UDIMM DDR4, 16GB, frecuencia 3200MHz, voltaje 1.2V, buena opción para PCs de gama media.",60
+"Hiksemi Future Lite – 2TB",800,"SSD M.2 PCIe Gen4 x4, lectura ultra rápida, ideal para cargas pesadas y multitarea.",181
+"Hiksemi Future X Lite 2TB Gen",600,"SSD NVMe Gen4 x4, lectura hasta 7100MB/s. Disipador incluido. Excelente para multitarea intensiva.",230
+"Kingston Fury Beast DDR4 3200MHz",800,"Módulo UDIMM DDR4, 16GB, frecuencia 3200MHz, CL16, voltaje 1.35V, ideal para gaming y productividad.",75
+"Kingston Fury Beast DDR4 3200MHz RGB",650,"Módulo UDIMM DDR4, 32GB, frecuencia 3200MHz, RGB, voltaje 1.2V, excelente para multitarea y gaming avanzado.",153
+"Kingston Fury Renegade 2TB NVMe PCIe Gen4",600,"Velocidad de lectura/escritura de hasta 7300/7000 MB/s. Ideal para gaming extremo y edición profesional. Compatible con PS5.",350
+"Kingston NV2 Gen4 4TB SNV2S/4000G",600,"Interfaz PCIe 4.0 x4, lectura hasta 3500MB/s. Gran capacidad para almacenamiento masivo con eficiencia térmica.",440
+"Kingston NV2 SNV2S/1000G – 1TB",800,"SSD M.2 NVMe PCIe 4.0, velocidad de lectura hasta 3500MB/s. Ideal para notebooks y PCs modernas.",114
+"Lexar LD4AS032G-B3200GSST DDR4 3200MHz",650,"Módulo UDIMM DDR4, 32GB, frecuencia 3200MHz, voltaje 1.2V, buena opción para productividad y gaming moderado.",129
+"MacBook Air M2 (13")",50,"Ultraliviana, con chip M2, ideal para estudiantes, profesionales móviles y tareas creativas ligeras. Excelente autonomía y diseño minimalista.",1800
+"MacBook Air M4 (13.6")",50,"Última generación con chip M4, 16GB RAM, SSD de 512GB. Rendimiento mejorado y diseño refinado. Perfecta para multitarea y portabilidad.",1700
+"MacBook Pro M1 Max (16")",10,"Chip M1 Max, 32GB RAM, SSD de 1TB. Rendimiento extremo para edición 4K, modelado 3D y flujos de trabajo pesados.",2999
+"MacBook Pro M3 (14")",50,"Potencia profesional con chip M3, pantalla Liquid Retina XDR, ideal para edición de video, programación y diseño gráfico exigente.",2700
+"MSI Pro B650M-P ",700,"Micro-ATX, socket AM5, DDR5, PCIe 4.0, LAN 2.5Gb, ideal para Ryzen 7000 y 8000. Moderna y accesible.",129
+"Radeon RX 6900 XT",200,"GPU de alto rendimiento, RDNA 2, 16GB GDDR6, gran capacidad para gaming en 4K.",599
+"Radeon RX 6950 XT",120,"GPU tope de gama de la generación RDNA 2, 16GB GDDR6, excelente para 4K y productividad.",699
+"Radeon RX 7800 XT",350,"GPU potente para 1440p, arquitectura RDNA 3, 16GB GDDR6, buena relación rendimiento/precio.",499
+"Radeon RX 7900 GRE",200,"Versión optimizada para entornos profesionales y gaming exigente, RDNA 3, 16GB GDDR6.",649
+"Radeon RX 7900 XT",200,"GPU de alto rendimiento, RDNA 3, 20GB GDDR6, excelente para 1440p y 4K con buena eficiencia energética",899
+"Radeon RX 7900 XTX",200,"GPU de alta gama, arquitectura RDNA 3, 24GB GDDR6, ideal para gaming en 4K y tareas intensivas",999
+"Radeon RX 9060 XT",100,"GPU potente para 1440p, RDNA 4, 32 unidades de procesamiento, 32GB GDDR6, buena relación rendimiento/precio con soporte para FSR 4",649
+"Radeon RX 9070",100,"GPU de alto rendimiento RDNA 4, 56 unidades de procesamiento, 16GB GDDR6, excelente para gaming en 4K y tareas exigentes con IA.",899
+"Radeon RX 9070 XT",120,"GPU tope de gama RDNA 4, 64 unidades de procesamiento, 64GB GDDR6, aceleradores de rayos e IA de última generación, ideal para 4K y creación de contenido profesional.",1199
+"RTX 4070",120,"Buena opción para gaming en 1080p/1440p con eficiencia energética",550
+"RTX 4070 SUPER",355,"GPU de gama media-alta, Ada Lovelace, 12GB GDDR6X, 7168 núcleos CUDA, ideal para gaming competitivo.; Rendimiento sólido en 1440p, ideal para creadores y gamers exigentes.","599; 600"
+"RTX 4070 Ti SUPER",320,"Excelente para 1440p y 4K, con DLSS 3.5 y trazado de rayos Gen 3.; GPU para 1440p exigente, Ada Lovelace, 16GB GDDR6X, 8448 núcleos CUDA, buena relación rendimiento/precio.","750; 799"
+"RTX 4080 SUPER",300,"GPU de alto rendimiento, Ada Lovelace, 16GB GDDR6X, 10240 núcleos CUDA, excelente para gaming 4K y productividad",999
+"RTX 4090",200,"GPU insignia, Ada Lovelace, 24GB GDDR6X, 16384 núcleos CUDA, ideal para 4K, IA y edición profesional.",1599
+"RTX 5070",120,"Ideal para gaming competitivo en 1080p/1440p, con eficiencia y capacidades IA",550
+"RTX 5070 Ti",120,"Rendimiento sólido en 1440p y 4K con DLSS 4 y trazado de rayos Gen 4.",750
+"RTX 5090",150,"GPU de ultra rendimiento, arquitectura Blackwell, 32GB GDDR7, 21760 núcleos CUDA, ideal para 4K extremo, IA y simulación.",1999
+"RTX 5800",150,"GPU de gama alta, Blackwell, 16GB GDDR7 a 30Gbps, 10752 núcleos CUDA, excelente para gaming 4K y creación de contenido.",999
+"Ryzen 5 7600X",300,"6 núcleos, turbo de 5.3 GHz, excelente para gaming en 1080p y tareas generales. Muy eficiente y competitivo.",269
+"Ryzen 7 7700X",300,"Zen 4, 8 núcleos, ideal para gaming en 1440p y edición ligera. Buen balance entre precio y potencia.",319
+"Ryzen 7 9700F",300,"8 núcleos, sin gráficos integrados, pensado para gamers y creadores que usan GPU dedicada. Zen 5 con buen rendimiento por dólar.",349
+"Ryzen 9 9950X",300,"Versión sin V-Cache, pero con gran potencia para tareas exigentes. Turbo de hasta 5.7 GHz y excelente rendimiento multihilo.",699
+"Ryzen 9 9950X3D",300,"16 núcleos con tecnología 3D V-Cache de segunda generación. Ideal para gaming extremo y creación de contenido con baja latencia.",749
+"Ryzen Threadripper 9980X",300,"64 núcleos y 128 hilos, diseñado para estaciones de trabajo, renderizado 3D, simulaciones y cargas masivas. Arquitectura Zen 5.",1499
+"Western Digital SN350 Green – 1TB",800,"SSD M.2 NVMe PCIe Gen3, lectura hasta 2400MB/s. Excelente relación precio-rendimiento.",95

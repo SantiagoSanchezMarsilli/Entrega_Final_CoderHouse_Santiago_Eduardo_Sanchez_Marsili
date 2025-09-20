@@ -1,0 +1,25 @@
+ID_Ventas,Fecha,Producto,Cantidad,Precio_Unitario,Medio_de_Pago,Cliente,Apellido_Cliente
+9,2025-09-01,"ADATA XPG MARS 980 Blade Gen5 4TB",2,1084,Efectivo,Romina,Benitez
+24,2025-09-05,"Radeon RX 9070",1,899,Efectivo,Paula,Gutierrez
+4,2025-08-29,"RTX 5090",2,1999,"Tarjeta Debito",Mariana,Alvarez
+5,2025-08-29,"RTX 5800",4,999,"Tarjeta Debito","Flavia N",Stein
+8,2025-09-01,"RTX 4090",1,1599,"Tarjeta Debito",Rodrigo,Lucerna
+8,2025-09-01,"Core i9-14900KS",1,699,"Tarjeta Debito",Rodrigo,Lucerna
+8,2025-09-01,"ASUS ROG Crosshair X870E Hero",1,663,"Tarjeta Debito",Rodrigo,Lucerna
+8,2025-09-01,"Lexar LD4AS032G-B3200GSST DDR4 3200MHz",2,258,"Tarjeta Debito",Rodrigo,Lucerna
+23,2025-09-05,"Ryzen Threadripper 9980X",1,1499,"Tarjeta Debito",Pedro,Gonzalez
+23,2025-09-05,"Western Digital SN350 Green – 1TB",2,190,"Tarjeta Debito",Pedro,Gonzalez
+2,2025-08-03,"RTX 4090",1,1599,Visa,Comprador,Eventual
+7,2025-08-29,"MacBook Pro M1 Max (16")",1,2599,Visa,Santiago,Gutierrez
+10,2025-09-03,"RTX 5090",1,1999,Visa,Comprador,Eventual
+10,2025-09-03,"Core Ultra 5 235A",1,299,Visa,Comprador,Eventual
+25,2025-09-05,"Kingston Fury Beast DDR4 3200MHz",2,150,Visa,Comprador,Eventual
+28,2025-09-06,"Radeon RX 7900 XTX",1,999,"Masterd Card",Rodrigo,Lucerna
+3,2025-08-03,"Radeon RX 6950 XT",1,699,"American Express","Flavia N",Stein
+26,2025-09-06,"MacBook Air M4 (13.6")",1,1700,"American Express",Mariana,Alvarez
+27,2025-09-06,"Radeon RX 9070",1,899,"American Express",Comprador,Eventual
+27,2025-09-06,"Ryzen Threadripper 9980X",1,1499,"American Express",Comprador,Eventual
+27,2025-09-06,"Kingston Fury Beast DDR4 3200MHz RGB",1,153,"American Express",Comprador,Eventual
+27,2025-09-06,"Western Digital SN350 Green – 1TB",1,95,"American Express",Comprador,Eventual
+1,2025-08-03,"MacBook Pro M1 Max (16")",1,2999,"Modo / Mercado Pago",Comprador,Eventual
+6,2025-08-29,"MacBook Pro M1 Max (16")",1,2599,"Modo / Mercado Pago",Santiago,Gutierrez
